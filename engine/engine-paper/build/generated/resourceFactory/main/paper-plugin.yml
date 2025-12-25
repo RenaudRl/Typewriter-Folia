@@ -1,6 +1,6 @@
 api-version: 1.21.3
 name: Typewriter
-version: 0.9.0
+version: 0.9.1
 main: com.typewritermc.engine.paper.TypewriterPaperPlugin
 loader: com.typewritermc.engine.paper.TypewriterPaperLoader
 description: Next Generation Story Telling Plugin

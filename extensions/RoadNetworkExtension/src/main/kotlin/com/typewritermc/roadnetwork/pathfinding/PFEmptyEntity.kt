@@ -32,7 +32,7 @@ class PFCapabilities(
     val climber: Boolean = true,
     val swimmer: Boolean = false,
     val aquatic: Boolean = false,
-    val avian: Boolean = true,
+    val avian: Boolean = false,
     val aquaphobic: Boolean = false,
     val avoidsDoorways: Boolean = false,
     val opensDoors: Boolean = false,

@@ -92,14 +92,8 @@ fun roadNetworkFindPath(
 
     // When the pathfinder wants to go through another intermediary node, we know that we probably want to use that.
     // So we don't want this edge to be used.
-    val path = pathfinder.computePathTo(end.position.x, end.position.y, end.position.z) ?: run {
-        println("[DEBUG] GPS: Pathfinder returned null path from ${start.position} to ${end.position}")
-        return null
-    }
-    if (interestingNodes.isNotEmpty() && path.any { it.isInRangeOf(interestingNodes, additionalRadius) }) {
-        println("[DEBUG] GPS: Path passes through valid road nodes, discarding.")
-        return null
-    }
+    val path = pathfinder.computePathTo(end.position.x, end.position.y, end.position.z) ?: return null
+    if (interestingNodes.isNotEmpty() && path.any { it.isInRangeOf(interestingNodes, additionalRadius) }) return null
 
     return path
 }

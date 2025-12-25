@@ -76,7 +76,7 @@ class PFInstanceSpace(val world: com.typewritermc.core.utils.point.World) : IIns
         synchronized(chunkSpaces) {
             chunkSpaces[key]?.let { return it }
         }
-        println("[DEBUG] PFInstanceSpace: Loading chunk $cx, $cz async")
+
 
         val bukkitWorld = world.toBukkitWorld()
         val snapshot = suspendCancellableCoroutine<org.bukkit.ChunkSnapshot> { cont ->
@@ -105,7 +105,7 @@ class PFInstanceSpace(val world: com.typewritermc.core.utils.point.World) : IIns
         synchronized(chunkSpaces) {
             val space = chunkSpaces[key]
             if (space == null) {
-                println("[DEBUG] PFInstanceSpace: Chunk $cx, $cz not preloaded, returning UnloadedColumnarSpace")
+
                 return UnloadedColumnarSpace(this)
             }
             return space

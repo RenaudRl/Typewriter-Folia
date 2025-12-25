@@ -24,18 +24,12 @@ class _TickerProviderHookState
     extends HookState<TickerProvider, _TickerProviderHook>
     implements TickerProvider {
   Set<Ticker>? _tickers;
-  ValueListenable<TickerModeData>? _tickerModeNotifier;
 
   @override
   Ticker createTicker(TickerCallback onTick) {
-    if (_tickerModeNotifier == null) {
-      // Setup TickerMode notifier before we vend the first ticker.
-      _updateTickerModeNotifier();
-    }
-    assert(_tickerModeNotifier != null, "TickerMode was not initialized");
     _tickers ??= <Ticker>{};
     final result = Ticker(onTick, debugLabel: "created by $context")
-      ..muted = !_tickerModeNotifier!.value.enabled;
+      ..muted = !TickerMode.of(context);
     _tickers!.add(result);
     return result;
   }
@@ -68,35 +62,18 @@ class _TickerProviderHookState
       }(),
       "Ticker was not disposed",
     );
-    _tickerModeNotifier?.removeListener(_updateTickers);
-    _tickerModeNotifier = null;
     super.dispose();
   }
 
   @override
   TickerProvider build(BuildContext context) {
-    _updateTickerModeNotifier();
-    _updateTickers();
-    return this;
-  }
-
-  void _updateTickers() {
     if (_tickers != null) {
-      final muted = !_tickerModeNotifier!.value.enabled;
+      final muted = !TickerMode.of(context);
       for (final ticker in _tickers!) {
         ticker.muted = muted;
       }
     }
-  }
-
-  void _updateTickerModeNotifier() {
-    final newNotifier = TickerMode.getValuesNotifier(context);
-    if (newNotifier == _tickerModeNotifier) {
-      return;
-    }
-    _tickerModeNotifier?.removeListener(_updateTickers);
-    newNotifier.addListener(_updateTickers);
-    _tickerModeNotifier = newNotifier;
+    return this;
   }
 
   @override

@@ -14,7 +14,20 @@
       "Bash(gradlew.bat:*)",
       "Bash(cmd:*)",
       "Bash(gradle:*)",
-      "Bash(./gradlew.bat:*)"
+      "Bash(./gradlew.bat:*)",
+      "Bash(winget install:*)",
+      "Bash(winget search:*)",
+      "Bash(choco:*)",
+      "Bash(powershell -Command \"Invoke-WebRequest -Uri ''https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.27.3-stable.zip'' -OutFile ''$env:TEMP\\\\flutter.zip''\")",
+      "Bash(powershell -Command \"[Environment]::SetEnvironmentVariable\\(''Path'', [Environment]::GetEnvironmentVariable\\(''Path'', ''User''\\) + '';C:\\\\src\\\\flutter\\\\bin'', ''User''\\)\")",
+      "Bash(/c/src/flutter/bin/flutter doctor:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File ./release-build.ps1)",
+      "Bash(/c/src/flutter/bin/flutter clean:*)",
+      "Bash(/c/src/flutter/bin/flutter pub:*)",
+      "Bash(/c/src/flutter/bin/flutter build web)",
+      "Bash(/c/src/flutter/bin/flutter:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:github.com)"
     ],
     "deny": [],
     "ask": []

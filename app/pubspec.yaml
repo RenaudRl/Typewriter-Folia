@@ -53,13 +53,13 @@ dev_dependencies:
     sdk: flutter
   flutter_lints:
   build_runner:
-  freezed: 
-  json_serializable: 
+  freezed:
+  json_serializable:
   icons_launcher:
-  auto_route_generator: 
-  riverpod_generator: 
+  auto_route_generator:
+  riverpod_generator:
   custom_lint:
-  riverpod_lint: 
+  riverpod_lint:
   integration_test:
     sdk: flutter
 

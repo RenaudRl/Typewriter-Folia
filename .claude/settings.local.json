@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(for dir in BasicExtension CitizensExtension EntityExtension)",
+      "Bash(do echo \"=== $dir ===\")",
+      "Bash(done)",
+      "Bash(./gradlew:*)",
+      "Bash(bash gradlew :BasicExtension:build)",
+      "Bash(unzip:*)",
+      "Read(//c/**)",
+      "Bash(gradlew.bat:*)",
+      "Bash(cmd:*)",
+      "Bash(gradle:*)",
+      "Bash(./gradlew.bat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

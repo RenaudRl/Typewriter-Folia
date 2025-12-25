@@ -1,0 +1,17 @@
+{
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  "cSpell.words": [
+    "actionbar",
+    "Actionbar",
+    "bossbar",
+    "cinematics",
+    "Cinematics",
+    "Playerprogress",
+    "transform",
+    "triggerable"
+  ],
+  "todo-tree.tree.showBadges": true,
+  "todo-tree.tree.showCountsInTree": true,
+  "files.eol": "\n",
+  "workbench.colorCustomizations": {}
+}

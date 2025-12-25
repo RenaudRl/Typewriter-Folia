@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm update",
+            "type": "shell",
+            "command": "npm update",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "npm ci",
+            "type": "shell",
+            "command": "npm ci",
+            "group": "build",
+            "problemMatcher": [],
+            "dependsOn": "npm update"
+        }
+    ]
+}

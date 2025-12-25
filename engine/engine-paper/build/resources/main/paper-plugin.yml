@@ -1,0 +1,24 @@
+api-version: 1.21.3
+name: Typewriter
+version: 0.9.0
+main: com.typewritermc.engine.paper.TypewriterPaperPlugin
+loader: com.typewritermc.engine.paper.TypewriterPaperLoader
+description: Next Generation Story Telling Plugin
+authors:
+- gabber235
+website: https://docs.typewritermc.com
+folia-supported: true
+dependencies:
+    server:
+        PlaceholderAPI:
+            load: BEFORE
+            required: false
+            join-classpath: true
+        floodgate:
+            load: BEFORE
+            required: false
+            join-classpath: true
+        packetevents:
+            load: BEFORE
+            required: true
+            join-classpath: true
